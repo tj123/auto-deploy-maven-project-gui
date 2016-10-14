@@ -1,0 +1,22 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="spring-properties.xml"/>
+    <import resource="spring-mvc.xml"/>
+    <!-- <import resource="spring-dbcp2.xml"/> -->
+    <!-- <import resource="spring-dbcp2-oracle.xml"/> -->
+    <!--<import resource="spring-dbcp.xml"/>-->
+    <import resource="spring-jndi.xml"/>
+    <import resource="spring-jndi-oracle.xml"/>
+    <!--dbcp 和jndi不能同时包含-->
+    <import resource="spring-tx.xml"/>
+    <import resource="spring-tx-oracle.xml"/>
+    <import resource="spring-mongo.xml"/>
+    <import resource="spring-redis.xml"/>
+    <import resource="spring-permission.xml"/>
+    <import resource="spring-context.xml"/>
+
+
+</beans>

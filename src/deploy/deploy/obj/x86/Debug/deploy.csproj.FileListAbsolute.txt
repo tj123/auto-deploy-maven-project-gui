@@ -1,0 +1,11 @@
+E:\prictice\cs\auto-deploy-maven-project-gui\src\deploy\deploy\bin\Debug\deploy.exe
+E:\prictice\cs\auto-deploy-maven-project-gui\src\deploy\deploy\bin\Debug\deploy.pdb
+E:\prictice\cs\auto-deploy-maven-project-gui\src\deploy\deploy\bin\Debug\Newtonsoft.Json.dll
+E:\prictice\cs\auto-deploy-maven-project-gui\src\deploy\deploy\bin\Debug\Newtonsoft.Json.pdb
+E:\prictice\cs\auto-deploy-maven-project-gui\src\deploy\deploy\bin\Debug\Newtonsoft.Json.xml
+E:\prictice\cs\auto-deploy-maven-project-gui\src\deploy\deploy\obj\x86\Debug\deploy.csprojResolveAssemblyReference.cache
+E:\prictice\cs\auto-deploy-maven-project-gui\src\deploy\deploy\obj\x86\Debug\deploy.deploy.resources
+E:\prictice\cs\auto-deploy-maven-project-gui\src\deploy\deploy\obj\x86\Debug\deploy.Properties.Resources.resources
+E:\prictice\cs\auto-deploy-maven-project-gui\src\deploy\deploy\obj\x86\Debug\deploy.csproj.GenerateResource.Cache
+E:\prictice\cs\auto-deploy-maven-project-gui\src\deploy\deploy\obj\x86\Debug\deploy.exe
+E:\prictice\cs\auto-deploy-maven-project-gui\src\deploy\deploy\obj\x86\Debug\deploy.pdb

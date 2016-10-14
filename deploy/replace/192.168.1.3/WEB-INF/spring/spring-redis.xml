@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <description>Spring Redis 数据源配置</description>
+
+    <!-- 连接池配置 -->
+    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig" scope="singleton">
+        <property name="maxTotal">
+            <value>${redis.maxTotal}</value>
+        </property>
+        <property name="maxIdle">
+            <value>${redis.maxIdle}</value>
+        </property>
+        <property name="maxWaitMillis">
+            <value>${redis.maxWaitMillis}</value>
+        </property>
+        <property name="testOnBorrow">
+            <value>${redis.testOnBorrow}</value>
+        </property>
+    </bean>
+
+    <!-- 集群节点配置 -->
+    <bean id="node1" class="redis.clients.jedis.HostAndPort">
+        <constructor-arg name="host" value="${redis.node1.host}"/>
+        <constructor-arg name="port" value="${redis.node1.port}"/>
+    </bean>
+
+    <bean id="node2" class="redis.clients.jedis.HostAndPort">
+        <constructor-arg name="host" value="${redis.node2.host}"/>
+        <constructor-arg name="port" value="${redis.node2.port}"/>
+    </bean>
+
+    <bean id="node3" class="redis.clients.jedis.HostAndPort">
+        <constructor-arg name="host" value="${redis.node3.host}"/>
+        <constructor-arg name="port" value="${redis.node3.port}"/>
+    </bean>
+
+    <bean id="node4" class="redis.clients.jedis.HostAndPort">
+        <constructor-arg name="host" value="${redis.node4.host}"/>
+        <constructor-arg name="port" value="${redis.node4.port}"/>
+    </bean>
+
+    <bean id="node5" class="redis.clients.jedis.HostAndPort">
+        <constructor-arg name="host" value="${redis.node5.host}"/>
+        <constructor-arg name="port" value="${redis.node5.port}"/>
+    </bean>
+
+    <bean id="node6" class="redis.clients.jedis.HostAndPort">
+        <constructor-arg name="host" value="${redis.node6.host}"/>
+        <constructor-arg name="port" value="${redis.node6.port}"/>
+    </bean>
+
+    <!-- redisCluster配置 -->
+    <bean id="redis" class="redis.clients.jedis.JedisCluster" scope="singleton" destroy-method="close">
+        <constructor-arg name="jedisClusterNode">
+            <set>
+                <ref bean="node1"/>
+                <ref bean="node2"/>
+                <ref bean="node3"/>
+                <ref bean="node4"/>
+                <ref bean="node5"/>
+                <ref bean="node6"/>
+            </set>
+        </constructor-arg>
+
+        <constructor-arg name="timeout" value="${redis.timeout}"/>
+
+        <constructor-arg name="maxRedirections" value="${redis.maxRedirections}"/>
+
+        <constructor-arg name="poolConfig">
+            <ref bean="jedisPoolConfig"/>
+        </constructor-arg>
+    </bean>
+
+    <!-- redisTemplate 工具类配置 -->
+    <bean id="redisTemplate" class="com.shundian.gov.common.db.redis.RedisTemplate">
+        <property name="redis">
+            <ref bean="redis"/>
+        </property>
+    </bean>
+
+</beans>
