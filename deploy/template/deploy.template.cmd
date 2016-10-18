@@ -166,7 +166,7 @@ echo fi >> %linux_sh%
 :after_check_project
 echo unzip -q $server_backup_loc/$project_name.zip -d $server_backup_loc >> %linux_sh%
 if "%restart_server%" == "y" (
-echo ps -ef^|grep tomcat ^|grep %stop_tag%^|grep -v grep^|grep -v PPID^|grep -v tail^|awk '{print $2}'^|xargs kill -9 >> %linux_sh%
+echo ps -ef^|grep tomcat^|grep %stop_tag%^|grep -v grep^|grep -v PPID^|grep -v tail^|awk '{print $2}'^|xargs kill -9 >> %linux_sh%
 )
 if "%cover%" == "y" (
     goto :rm_server_files
@@ -195,7 +195,7 @@ echo #cover files >>%linux_sh%
 if not "%project_name%" == "%deploy_as%" (
 echo mv $server_backup_loc/$project_name $server_backup_loc/$deploy_as >>%linux_sh%
 )
-echo echo y^|cp -rf $server_backup_loc/$deploy_as $catalina_home/webapps >>%linux_sh%
+echo echo y^|cp -rf $server_backup_loc/$deploy_as $webapps_loc >>%linux_sh%
 goto :after_put_files
 :put_files
 echo #put files >>%linux_sh%
